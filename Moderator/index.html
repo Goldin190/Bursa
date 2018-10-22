@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 bg-dark">
+                <nav class="navbar bg-dark navbar-dark " role="tablist">
+                    <ul class="nav navbar-nav ">
+                        <li class="nav-item">
+                            <a class="navbar-brand nav-link" role="tab" data-toggle="tab" href="#acc_inf">
+                            Imie nazwisko<br />
+                            Grupa/y
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-toggle="tab" role="tab" href="#">wyloguj</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-toggle="tab" role="tab" href="#groups">Grupy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-toggle="tab" role="tab" href="#students">Uczniowie</a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="col-sm-10 bg-secondary">
+                <div class="tab-content">
+                    <div class="tab-pane" id="students" role="tabpanel">
+                        <table class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Imie</th>
+                                    <th>Nazwisko</th>
+                                    <th>Grupa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Marcin</td>
+                                    <td>Kowalski</td>
+                                    <td>A</td>
+                                    <td><button class="btn btn-info btn-students-show">Pokaż</button><button class="btn btn-success btn-students-edit">Edytuj</button><button class="btn btn-danger btn-students-del">Usuń</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Piotr</td>
+                                    <td>Nowak</td>
+                                    <td>B</td>
+                                    <td><button class="btn btn-info btn-students-show">Pokaż</button><button class="btn btn-success btn-students-edit">Edytuj</button><button class="btn btn-danger btn-students-del">Usuń</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Julia</td>
+                                    <td>Nowakowska</td>
+                                    <td>A</td>
+                                    <td><button class="btn btn-info btn-students-show">Pokaż</button><button class="btn btn-success btn-students-edit">Edytuj</button><button class="btn btn-danger btn-students-del">Usuń</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane " id="groups" role="tabpanel">
+                        <table class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Grupa</th>
+                                    <th>Nauczyciel prowadzący</th>
+                                    <th>Ilość uczniów</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Marcin Kowalski</td>
+                                    <td>15</td>
+                                    <td><button class="btn btn-info btn-groups-show">Pokaż</button><button class="btn btn-success btn-groups-edit">Edytuj</button><button class="btn btn-danger btn-groups-del">Usuń</button></td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td>Adriana Kępkę</td>
+                                    <td>12</td>
+                                    <td><button class="btn btn-info btn-groups-show">Pokaż</button><button class="btn btn-success btn-groups-edit">Edytuj</button><button class="btn btn-danger btn-groups-del">Usuń</button></td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td>Jakuba Pogonałke</td>
+                                    <td>15</td>
+                                    <td><button class="btn btn-info btn-groups-show">Pokaż</button><button class="btn btn-success btn-groups-edit">Edytuj</button><button class="btn btn-danger btn-groups-del">Usuń</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane " id="acc_inf" role="tabpanel">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-dark">Login :<span>    Username</span></li>
+                            <li class="list-group-item list-group-item-secondary">Hasło :<span>    ********</span></li>
+                            <li class="list-group-item list-group-item-dark">Grupa :<span>    A</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane active show" id="inf_student" role="tabpanel">
+                        <div id="inf">
+                            <div id="collapse_table">
+                                <div class="card bg-dark">
+                                    <div class="card-header">
+                                        <a class="card-link text-info" data-toggle="collapse" href="#table">
+                                            Informacje o uczniu
+                                        </a>
+                                    </div>
+                                    <div id="table" class=" collapse show" data-parent="#inf">
+                                        <div class="card-body">
+                                            <ul class="list-group info" id="collapse_in_table">
+                                                <li class="list-group-item list-group-item-dark"><span id="name">Imie</span><span id="nd_name"> Nazwisko</span></li>
+                                                <li class="list-group-item list-group-item-secondary"><span id="school">Nazwa szkoły</span></li>
+                                                <li class="list-group-item list-group-item-dark"><span id="adres">Adres ucznia</span></li>
+                                                <li class="list-group-item list-group-item-secondary"><span id="parents_names"><span id="mother_name">Imie_Matki</span> <span id="mother_nd_name">Nazwisko_matki</span> <span id="father_name">Imie_Ojca</span> <span id="father_nd_name">Nazwisko_Ojca</span></span>
+                                                </li>
+                                                <li class="list-group-item list-group-item-dark">
+                                                    <div class="card bg-dark">
+                                                        <div class="card-header">
+                                                            <a class="collapsed card-link text-info" data-toggle="collapse" href="#alergens">
+                                                                    Nie tolerancje ucznia
+                                                                </a>
+                                                        </div>
+                                                        <div id="alergens" class=" collapse" data-parent="#collapse_in_table">
+                                                            <div class="card-body">
+                                                                <ul class="list-group alergens">
+                                                                    <li class="list-group-item list-group-item-dark"><span id="al1">alegren1</span></li>
+                                                                    <li class="list-group-item list-group-item-secondary"><span id="al2">alegren2</span></li>
+                                                                    <li class="list-group-item list-group-item-dark"><span id="al3">alegren3</span></li>
+                                                                    <li class="list-group-item list-group-item-secondary"><span id="al4">alegren4</span></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item list-group-item-secondary">
+                                                    <div class="card bg-dark">
+                                                        <div class="card-header">
+                                                            <a class="collapsed card-link text-info" data-toggle="collapse" href="#contact">
+                                                                    Dane kontaktowe
+                                                                </a>
+                                                        </div>
+                                                        <div id="contact" class=" collapse" data-parent="#collapse_in_table">
+                                                            <div class="card-body">
+                                                                <ul class="list-group contact">
+                                                                    <li class="list-group-item list-group-item-dark"><span id="student_tel">Uczeń : 593357123</span></li>
+                                                                    <li class="list-group-item list-group-item-secondary"><span id="father_tel">Ojciec : 456457123</span></li>
+                                                                    <li class="list-group-item list-group-item-dark"><span id="mother_tel">Matka : 593363523</span></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-dark">
+                                <div class="card-header">
+                                    <a class="collapsed card-link text-info" data-toggle="collapse" href="#reports">
+                                        Uwagi
+                                    </a>
+                                    <div id="reports" class="collapse" data-parent="#inf">
+                                        <div class="card-body">
+                                            <table class="table table-dark table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Wychowawca</th>
+                                                        <th>Data</th>
+                                                        <th><button class="btn btn-info btn-report-add">Dodaj</button></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Adrian Lwowski</td>
+                                                        <td>24-08-2018</td>
+                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Łukasz Milfomaniak</td>
+                                                        <td>14-04-2018</td>
+                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Leśniak Miszczu</td>
+                                                        <td>24-03-2018</td>
+                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tomasz Likus</td>
+                                                        <td>23-09-2018</td>
+                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
