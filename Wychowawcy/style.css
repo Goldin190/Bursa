@@ -1,0 +1,9 @@
+.row{
+    height: 100vh;
+}
+.navbar,.navbar-nav{
+    height: 100%;
+}
+.navbar-item{
+    margin-top: 5vh;
+}
