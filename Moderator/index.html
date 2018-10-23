@@ -19,9 +19,9 @@
                     <ul class="nav navbar-nav ">
                         <li class="nav-item">
                             <a class="navbar-brand nav-link" role="tab" data-toggle="tab" href="#acc_inf">
-                            Imie nazwisko<br />
-                            Grupa/y
-                        </a>
+                                Imie nazwisko<br />
+                                Grupa/y
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " data-toggle="tab" role="tab" href="#">wyloguj</a>
@@ -45,6 +45,7 @@
                                     <th>Imie</th>
                                     <th>Nazwisko</th>
                                     <th>Grupa</th>
+                                    <th><button class="btn btn-students-add btn-info ">Dodaj</button></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,19 +53,19 @@
                                     <td>Marcin</td>
                                     <td>Kowalski</td>
                                     <td>A</td>
-                                    <td><button class="btn btn-info btn-students-show">Pokaż</button><button class="btn btn-success btn-students-edit">Edytuj</button><button class="btn btn-danger btn-students-del">Usuń</button></td>
+                                    <td><button type="button" class="btn btn-students btn-info" id="1">Otwórz</button><button class="btn btn-students-del btn-danger">Usuń</button></td>
                                 </tr>
                                 <tr>
                                     <td>Piotr</td>
                                     <td>Nowak</td>
                                     <td>B</td>
-                                    <td><button class="btn btn-info btn-students-show">Pokaż</button><button class="btn btn-success btn-students-edit">Edytuj</button><button class="btn btn-danger btn-students-del">Usuń</button></td>
+                                    <td><button type="button" class="btn btn-students btn-info" id="2">Otwórz</button><button class="btn btn-students-del btn-danger">Usuń</button></td>
                                 </tr>
                                 <tr>
                                     <td>Julia</td>
                                     <td>Nowakowska</td>
                                     <td>A</td>
-                                    <td><button class="btn btn-info btn-students-show">Pokaż</button><button class="btn btn-success btn-students-edit">Edytuj</button><button class="btn btn-danger btn-students-del">Usuń</button></td>
+                                    <td><button type="button" class="btn btn-students btn-info" id="3">Otwórz</button><button class="btn btn-students-del btn-danger">Usuń</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -76,6 +77,7 @@
                                     <th>Grupa</th>
                                     <th>Nauczyciel prowadzący</th>
                                     <th>Ilość uczniów</th>
+                                    <th><button class="btn btn-groups-add btn-info">Dodaj</button></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,28 +85,28 @@
                                     <td>A</td>
                                     <td>Marcin Kowalski</td>
                                     <td>15</td>
-                                    <td><button class="btn btn-info btn-groups-show">Pokaż</button><button class="btn btn-success btn-groups-edit">Edytuj</button><button class="btn btn-danger btn-groups-del">Usuń</button></td>
+                                    <td><button class="btn btn-gruops btn-info">Pokaż</button><button class="btn btn-groups-edit btn-success">Edytuj</button><button class="btn btn-groups-del btn-danger">Usuń</button></td>
                                 </tr>
                                 <tr>
                                     <td>B</td>
                                     <td>Adriana Kępkę</td>
                                     <td>12</td>
-                                    <td><button class="btn btn-info btn-groups-show">Pokaż</button><button class="btn btn-success btn-groups-edit">Edytuj</button><button class="btn btn-danger btn-groups-del">Usuń</button></td>
+                                    <td><button class="btn btn-gruops btn-info">Pokaż</button><button class="btn btn-groups-edit btn-success">Edytuj</button><button class="btn btn-groups-del btn-danger">Usuń</button></td>
                                 </tr>
                                 <tr>
                                     <td>C</td>
                                     <td>Jakuba Pogonałke</td>
                                     <td>15</td>
-                                    <td><button class="btn btn-info btn-groups-show">Pokaż</button><button class="btn btn-success btn-groups-edit">Edytuj</button><button class="btn btn-danger btn-groups-del">Usuń</button></td>
+                                    <td><button class="btn btn-gruops btn-info">Pokaż</button><button class="btn btn-groups-edit btn-success">Edytuj</button><button class="btn btn-groups-del btn-danger">Usuń</button></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="tab-pane " id="acc_inf" role="tabpanel">
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-dark">Login :<span>    Username</span></li>
-                            <li class="list-group-item list-group-item-secondary">Hasło :<span>    ********</span></li>
-                            <li class="list-group-item list-group-item-dark">Grupa :<span>    A</span></li>
+                            <li class="list-group-item list-group-item-dark">Login :<span> Username</span></li>
+                            <li class="list-group-item list-group-item-secondary">Hasło :<span> ********</span></li>
+                            <li class="list-group-item list-group-item-dark">Grupa :<span> A</span></li>
                         </ul>
                     </div>
                     <div class="tab-pane active show" id="inf_student" role="tabpanel">
@@ -115,6 +117,7 @@
                                         <a class="card-link text-info" data-toggle="collapse" href="#table">
                                             Informacje o uczniu
                                         </a>
+                                        <a href="#edit-student" data-toggle="tab" role="tab"><button class="btn btn-success float-right btn-students-edit" >Edytuj</button></a>
                                     </div>
                                     <div id="table" class=" collapse show" data-parent="#inf">
                                         <div class="card-body">
@@ -128,8 +131,8 @@
                                                     <div class="card bg-dark">
                                                         <div class="card-header">
                                                             <a class="collapsed card-link text-info" data-toggle="collapse" href="#alergens">
-                                                                    Nie tolerancje ucznia
-                                                                </a>
+                                                                Nietolerancje ucznia
+                                                            </a>
                                                         </div>
                                                         <div id="alergens" class=" collapse" data-parent="#collapse_in_table">
                                                             <div class="card-body">
@@ -147,8 +150,8 @@
                                                     <div class="card bg-dark">
                                                         <div class="card-header">
                                                             <a class="collapsed card-link text-info" data-toggle="collapse" href="#contact">
-                                                                    Dane kontaktowe
-                                                                </a>
+                                                                Dane kontaktowe
+                                                            </a>
                                                         </div>
                                                         <div id="contact" class=" collapse" data-parent="#collapse_in_table">
                                                             <div class="card-body">
@@ -166,49 +169,131 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card bg-dark">
-                                <div class="card-header">
-                                    <a class="collapsed card-link text-info" data-toggle="collapse" href="#reports">
-                                        Uwagi
-                                    </a>
-                                    <div id="reports" class="collapse" data-parent="#inf">
-                                        <div class="card-body">
-                                            <table class="table table-dark table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Wychowawca</th>
-                                                        <th>Data</th>
-                                                        <th><button class="btn btn-info btn-report-add">Dodaj</button></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Adrian Lwowski</td>
-                                                        <td>24-08-2018</td>
-                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Łukasz Milfomaniak</td>
-                                                        <td>14-04-2018</td>
-                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Leśniak Miszczu</td>
-                                                        <td>24-03-2018</td>
-                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tomasz Likus</td>
-                                                        <td>23-09-2018</td>
-                                                        <td><button class="btn btn-info btn-report-show">Pokaż</button><button class="btn btn-success btn-report-edit">Edytuj</button><button class="btn btn-danger btn-report-del">Usuń</button></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                            <div class="reports">
+                                <div id="colapse_table_reports">
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#reports_table">
+                                                <span>Uwagi</span>
+                                            </a>
+                                        </div>
+                                        <div id="reports_table" class="collapse" data-parent="#inf">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nauczyciel</th>
+                                                            <th>Data</th>
+                                                            <th><button class="btn btn-reports-add btn-info">Dodaj</button></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Mariusz Kowalski</td>
+                                                            <td>10-09-2018</td>
+                                                            <td><button class="btn btn-report btn-info">Pokaż</button><button class="btn btn-report-edit btn-success">Edytuj</button><button class="btn btn-report-del btn-danger">Usuń</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Julia Jankowsa</td>
+                                                            <td>11-09-2018</td>
+                                                            <td><button class="btn btn-report btn-info">Pokaż</button><button class="btn btn-report-edit btn-success">Edytuj</button><button class="btn btn-report-del btn-danger">Usuń</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Damian Kowalczyk</td>
+                                                            <td>09-10-2017</td>
+                                                            <td><button class="btn btn-report btn-info">Pokaż</button><button class="btn btn-report-edit btn-success">Edytuj</button><button class="btn btn-report-del btn-danger">Usuń</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mariusz Kowalski</td>
+                                                            <td>25-12-2015</td>
+                                                            <td><button class="btn btn-report btn-info">Pokaż</button><button class="btn btn-report-edit btn-success">Edytuj</button><button class="btn btn-report-del btn-danger">Usuń</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                    <div class="tab-pane " id="edit-student" role="tabpanel">
+                        <form action="" method="post">
+                            <div id="parent">
+                                <div id="collapse_student">
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#student">
+                                                Informacje o uczniu
+                                            </a>
+                                            <button type="submit" class="btn btn-success float-right">Submit</button>
+                                        </div>
+                                        <div id="student" class="colapse show" data-parent="#parent">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-strip">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="name_nd_name" class="sr-only">Email</label>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Imie Nazwisko">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="imie" placeholder="Imie">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#parents">
+                                                Informacje o rodzicach
+                                            </a>
+                                        </div>
+
+                                        <div id="parents" class="colapse show" data-parent="#parent">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-strip">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="name_nd_name" class="sr-only">Mother_info</label>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="imie_matki" placeholder="Imie">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="nazwisko_matki" placeholder="Nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="name_nd_name" class="sr-only">Father_info</label>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Ojca">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="imie_ojca" placeholder="Imie">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="nazwisko_ojca" placeholder="Nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
