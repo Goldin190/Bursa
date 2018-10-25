@@ -5,7 +5,8 @@ $(document).ready(function(){
         $("#inf_student").addClass("active show");
     });
     $("button.btn-students-edit").click(function(){
-        
+        $(".tab-pane").removeClass("active show");
+        $("#edit-student").addClass("active show");
     });
     
 });

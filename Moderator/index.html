@@ -117,7 +117,7 @@
                                         <a class="card-link text-info" data-toggle="collapse" href="#table">
                                             Informacje o uczniu
                                         </a>
-                                        <a href="#edit-student" data-toggle="tab" role="tab"><button class="btn btn-success float-right btn-students-edit" >Edytuj</button></a>
+                                        <a href="#edit-student" data-toggle="tab" role="tab"><button class="btn btn-success float-right btn-students-edit">Edytuj</button></a>
                                     </div>
                                     <div id="table" class=" collapse show" data-parent="#inf">
                                         <div class="card-body">
@@ -235,7 +235,6 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <label for="name_nd_name" class="sr-only">Email</label>
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Imie Nazwisko">
                                                             </td>
                                                             <td>
@@ -243,6 +242,36 @@
                                                             </td>
                                                             <td>
                                                                 <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Grupa\Nr. pokoju">
+                                                            </td>
+                                                            <td>
+                                                                
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="PESEL\nr. telefonu">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="PESEL_student" placeholder="PESEL">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="nr_tel_student" placeholder="nr. Telefonu">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Data urodzenia\miejsce urodzenia">
+                                                            </td>
+                                                            <td>
+                                                                <input type="date" class="form-control" id="data_ur">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="miejsce_ur" placeholder="Miasto">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -289,7 +318,6 @@
                                                 </table>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
