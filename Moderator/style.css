@@ -7,15 +7,10 @@
 .navbar-item{
     margin-top: 5vh;
 }
-.btn-report-edit{
+.btn-report-edit,.btn-groups-edit{
     margin-left: 25%;
     margin-right: 25%;
 }
-.btn-students-edit{
+.btn-students-del{
     margin-left: 25%;
-    margin-right: 25%;
-}
-.btn-groups-edit{
-    margin-left: 25%;
-    margin-right: 25%;
 }
