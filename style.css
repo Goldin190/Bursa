@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: red;
+    background: none;
     border-radius: 50%;
 }
 .col-4{
@@ -19,6 +19,7 @@
     top: -3%;
 }
 #username,#password,#login{
+    border-radius: 10px;
     margin: 0 auto;
     width: 50%;
 }
@@ -32,7 +33,18 @@
 }
 .col-12{
     text-align: center;
+    color: azure;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+body {
+  background: url('logowanie%20wersja%20pierwsza%20(fuck%20my%20life).png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+body{
+    color: white;
 }
