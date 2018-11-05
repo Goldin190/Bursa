@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
 </head>
 <body>
 <?php
 require "../classes.php";
-session_start();
-$id =  $_SESSION['id'];
+
 $baza = new db;
 
 $baza->connection("bursa");
-$baza->select_user($id);
+$baza->select_students();
 $baza->close_connection();
 ?>    
 </body>
