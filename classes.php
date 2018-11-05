@@ -28,11 +28,26 @@
     }
     public function select_user($id){
         $sql = "SELECT imie,nazwisko FROM users 
-                WHERE ID LIKE '$id' ";
+                WHERE ID LIKE $id ";
         $result = $this->conn->query($sql);
     if(@$result->num_rows > 0){
         while($row = $result->fetch_array(MYSQLI_ASSOC)){
             echo $row['imie'] . " " . $row['nazwisko'] . "<br/>";
+        }
+    }else{
+        echo "error XDD";
+    }
+        
+    }
+       
+       
+    public function select_students(){
+        $sql = "SELECT ID,imie,nazwisko,ID_grupy FROM uczniowie
+                 ORDER BY nazwisko asc";
+        $result = $this->conn->query($sql);
+    if(@$result->num_rows > 0){
+        while($row = $result->fetch_array(MYSQLI_ASSOC)){
+            echo "<tr> " . "<td>" . $row["imie"] . "</td>". "<td>" . $row["nazwisko"] . "</td>" . "<td>" . $row["ID_grupy"] . "</td>" . "<td><button type='button' class='btn btn-students btn-info' id=" . $row["ID"] . ">Otwórz</button><button class='btn btn-students-del btn-danger'>Usuń</button></td>" . "</tr>";
         }
     }else{
         echo "error XDD";
