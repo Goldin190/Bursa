@@ -1,11 +1,15 @@
 $(document).ready(function(){
     ajax_start();
-    ajax_load_user("#kek");
-    ajax_send("select_user.php");
+    ajax_load("#kek");
+    ajax_send("php/select_user.php");
     
     ajax_start();
-    ajax_load_students("#students_table");
-    ajax_send("select_students.php");
+    ajax_load("#students_table");
+    ajax_send("php/select_students.php");
+    
+    ajax_start();
+    ajax_load("#groups_table");
+    ajax_send("php/select_groups.php");
     
     $("[href]").removeClass("active");
     $("button.btn-students").click(function(){
@@ -16,22 +20,15 @@ $(document).ready(function(){
         $(".tab-pane").removeClass("active show");
         $("#edit-student").addClass("active show");
     });
+    
 });
 
-function ajax_load_students(element){
+function ajax_load(element){
     xmlhttp.onreadystatechange =function(){
         if (this.readyState==4 && this.status==200) {
             $(element).html(this.responseText);
         }
     }
-}
-
-function ajax_load_user(element){
-    xmlhttp.onreadystatechange=function() {
-        if (this.readyState==4 && this.status==200) {
-            $(element).html(this.responseText);
-        }
-  }
 }
 
 function ajax_start(){
