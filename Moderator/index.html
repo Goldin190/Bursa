@@ -9,6 +9,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <!--    
+    W przypadku odkrycia przyczyny i możliwości naprawy należy usunąć z w plikach admin_class,mod_class,user_class z przycisków dodawanych przez skrypty php funkcję onchange,onclick 
+    i przepisać ją do jQuery dla danych profilów
+          -->
 </head>
 
 <body>
@@ -18,7 +22,7 @@
                 <nav class="navbar bg-dark navbar-dark " role="tablist">
                     <ul class="nav navbar-nav ">
                         <li class="nav-item">
-                            <a class="navbar-brand nav-link" id="kek"role="tab" data-toggle="tab" href="#acc_inf">
+                            <a class="navbar-brand nav-link" id="kek" role="tab" data-toggle="tab" href="#acc_inf">
                                 Imie nazwisko<br />
                                 Grupa/y
                             </a>
@@ -80,7 +84,7 @@
                                     <th><button class="btn btn-groups-add btn-info">Dodaj</button></th>
                                 </tr>
                             </thead>
-                            <tbody id ="groups_table">
+                            <tbody id="groups_table">
                                 <tr>
                                     <td>A</td>
                                     <td>Marcin Kowalski</td>
@@ -218,7 +222,7 @@
                         </div>
 
                     </div>
-                    <div class="tab-pane " id="edit-student" role="tabpanel">
+                    <div class="tab-pane active show" id="edit-student" role="tabpanel">
                         <form action="" method="post">
                             <div id="parent">
                                 <div id="collapse_student">
@@ -238,10 +242,10 @@
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Imie Nazwisko">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="imie" placeholder="Imie">
+                                                                <input type="text" class="form-control" id="imie" placeholder="Imie" name="imie">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko">
+                                                                <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko" name="nazwisko">
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -249,7 +253,13 @@
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Grupa\Nr. pokoju">
                                                             </td>
                                                             <td>
-                                                                
+                                                                <select class="form-control" id="grupa" name="grupa" onchange="select_room_update(12)">
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="from-control" id="room" name="room">
+                                                                    
+                                                                </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -286,7 +296,7 @@
                                             </a>
                                         </div>
 
-                                        <div id="parents" class="colapse show" data-parent="#parent">
+                                        <div id="parents" class="colapse active show" data-parent="#parent">
                                             <div class="card-body">
                                                 <table class="table table-dark table-strip">
                                                     <tbody>
