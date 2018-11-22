@@ -90,5 +90,17 @@
             return -1;
         }
     }
+    public function groups_to_select(){
+        $sql = "SELECT nazwa FROM grupa";
+        $result = $this->conn->query($sql);
+        
+        if(@$result->num_rows > 0){
+            while($row = $result->fetch_array(MYSQLI_ASSOC)){
+                echo "<option>" . $row["nazwa"] . "</option>";
+            }
+        }else{
+            echo "<script> console.log(\"Error 108  \") <script>";
+        }
+    }
 }
 ?>
