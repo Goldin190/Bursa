@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " data-toggle="tab" role="tab" href="#">wyloguj</a>
+                            <a class="nav-link"href="../index.html">wyloguj</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " data-toggle="tab" role="tab" href="#groups">Grupy</a>
@@ -49,28 +49,10 @@
                                     <th>Imie</th>
                                     <th>Nazwisko</th>
                                     <th>Grupa</th>
-                                    <th><button class="btn btn-students-add btn-info ">Dodaj</button></th>
+                                    <th><button onclick="add_student()" class="btn btn-students-add btn-info ">Dodaj</button></th>
                                 </tr>
                             </thead>
-                            <tbody id="students_table">
-                                <tr>
-                                    <td>Marcin</td>
-                                    <td>Kowalski</td>
-                                    <td>A</td>
-                                    <td><button type="button" class="btn btn-students btn-info" id="1">Otwórz</button><button class="btn btn-students-del btn-danger">Usuń</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Piotr</td>
-                                    <td>Nowak</td>
-                                    <td>B</td>
-                                    <td><button type="button" class="btn btn-students btn-info" id="2">Otwórz</button><button class="btn btn-students-del btn-danger">Usuń</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Julia</td>
-                                    <td>Nowakowska</td>
-                                    <td>A</td>
-                                    <td><button type="button" class="btn btn-students btn-info" id="3">Otwórz</button><button class="btn btn-students-del btn-danger">Usuń</button></td>
-                                </tr>
+                            <tbody id="students_table">                        
                             </tbody>
                         </table>
                     </div>
@@ -85,24 +67,7 @@
                                 </tr>
                             </thead>
                             <tbody id="groups_table">
-                                <tr>
-                                    <td>A</td>
-                                    <td>Marcin Kowalski</td>
-                                    <td>15</td>
-                                    <td><button class="btn btn-gruops btn-info">Pokaż</button><button class="btn btn-groups-edit btn-success">Edytuj</button><button class="btn btn-groups-del btn-danger">Usuń</button></td>
-                                </tr>
-                                <tr>
-                                    <td>B</td>
-                                    <td>Adriana Kępkę</td>
-                                    <td>12</td>
-                                    <td><button class="btn btn-gruops btn-info">Pokaż</button><button class="btn btn-groups-edit btn-success">Edytuj</button><button class="btn btn-groups-del btn-danger">Usuń</button></td>
-                                </tr>
-                                <tr>
-                                    <td>C</td>
-                                    <td>Jakuba Pogonałke</td>
-                                    <td>15</td>
-                                    <td><button class="btn btn-gruops btn-info">Pokaż</button><button class="btn btn-groups-edit btn-success">Edytuj</button><button class="btn btn-groups-del btn-danger">Usuń</button></td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -113,7 +78,7 @@
                             <li class="list-group-item list-group-item-dark">Grupa :<span> A</span></li>
                         </ul>
                     </div>
-                    <div class="tab-pane" id="inf_student" role="tabpanel">
+                    <div class="tab-pane" id="inf-student" role="tabpanel">
                         <div id="inf">
                             <div id="collapse_table">
                                 <div class="card bg-dark">
@@ -223,7 +188,7 @@
 
                     </div>
                     <div class="tab-pane active show" id="edit-student" role="tabpanel">
-                        <form action="" method="post">
+                        <form action="php/insert_student.php" method="post">
                             <div id="parent">
                                 <div id="collapse_student">
                                     <div class="card bg-dark">
@@ -250,10 +215,10 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Grupa\Nr. pokoju">
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="grupa_pokoj" value="Grupa\Nr. pokoju">
                                                             </td>
                                                             <td>
-                                                                <select class="form-control" id="grupa" name="grupa" onchange="select_room_update(12)">
+                                                                <select class="form-control" id="grupa" name="grupa" onchange="room_count_show()">
                                                                 </select>
                                                             </td>
                                                             <td>
@@ -267,10 +232,12 @@
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="PESEL\nr. telefonu">
                                                             </td>
                                                             <td>
-                                                                <input type="number" class="form-control" id="PESEL_student" placeholder="PESEL">
+                                                                <input type="number" class="form-control" id="PESEL_student" placeholder="PESEL"
+                                                                name="PESEL_student">
                                                             </td>
                                                             <td>
-                                                                <input type="number" class="form-control" id="nr_tel_student" placeholder="nr. Telefonu">
+                                                                <input type="number" class="form-control" id="nr_tel_student"
+                                                                name="tel_stud" placeholder="nr. Telefonu">
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -278,10 +245,47 @@
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Data urodzenia\miejsce urodzenia">
                                                             </td>
                                                             <td>
-                                                                <input type="date" class="form-control" id="data_ur">
+                                                                <input type="date" class="form-control" id="data_ur"
+                                                                name="data_ur">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="miejsce_ur" placeholder="Miasto">
+                                                                <input type="text" class="form-control" id="miejsce_ur"
+                                                                name="miasto" placeholder="Miasto">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="zainteresowania\przedmioty sprawiające trudność"> 
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="interest" placeholder="np. piłka,koszykówka..."
+                                                                name="int">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="subject" placeholder="np. matematyka,polski..."
+                                                                name="trud">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="szkola" value="Szkoła\adres">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text"
+                                                                class="form-control" name="szkola" placeholder="Szkoła od której uczęszcza uczeń">
+                                                            </td>
+                                                            <td><input type="text" class="form-control" name="adress_ucz"
+                                                            placeholder="Adres ucznia">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" value="choroby">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control"
+                                                                name="choroby"
+                                                                placeholder="Uczulenia i choroby ucznia">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -324,8 +328,45 @@
                                                                 <input type="text" class="form-control" id="nazwisko_ojca" placeholder="Nazwisko">
                                                             </td>
                                                         </tr>
+                                                        <tr>
+                                                            <td> <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Adres Zamieszkania rodziców"></td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="adres_matki" placeholder="Adres zamieszkania matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="adres_ojca" placeholder="Adres zamieszkania ojca">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Numer kontaktowy do rodziców"></td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="nr_tel_matki" name="tel_matka" placeholder="numer telefonu matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="nr_tel_ojca" name="tel_ojca" placeholder="numer telefonu ojca">
+                                                            </td>
+                                                        </tr>
                                                     </tbody>
                                                 </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#siblings">
+                                                Informacje o rodzeństwie
+                                            </a>
+                                        </div>
+
+                                        <div id="siblings" class="colapse active show" data-parent="#parent">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-strip">
+                                                    <tbody id="sib">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                                <input type="button" onclick="next_sibling()" class="btn btn-secondary" value="Dodaj Następne">
+                                                <input type="button" onclick="last_sibling()" class="btn btn-warning" value="Usuń Ostatnie">
                                             </div>
                                         </div>
                                     </div>
