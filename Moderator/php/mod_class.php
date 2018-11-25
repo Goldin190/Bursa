@@ -14,7 +14,6 @@
         $this->db_name = $name;
         // Create connection
         $this->conn = new mysqli($this->servername, $this->username, $this->password,$this->db_name);
-
         // Check connection
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
@@ -47,7 +46,7 @@
         $result = $this->conn->query($sql);
     if(@$result->num_rows > 0){
         while($row = $result->fetch_array(MYSQLI_ASSOC)){
-            echo "<tr> " . "<td>" . $row["imie"] . "</td>". "<td>" . $row["nazwisko"] . "</td>" . "<td>" . $row["nazwa"] . "</td>" . "<td><button type='button' class='btn btn-students btn-info' id=" . $row["ID"] . ">Otwórz</button><button id=" . $row["ID"] ." class='btn btn-students-del btn-danger'>Usuń</button></td>" . "</tr>";
+            echo "<tr> " . "<td>" . $row["imie"] . "</td>". "<td>" . $row["nazwisko"] . "</td>" . "<td>" . $row["nazwa"] . "</td>" . "<td><button type='button' class='btn btn-students btn-info' onclick=\"student_show()\" id=" . $row["ID"] . ">Otwórz</button><button id=" . $row["ID"] ." class='btn btn-students-del btn-danger'>Usuń</button></td>" . "</tr>";
         }
     }else{
         echo "error 002";
@@ -100,6 +99,44 @@
             }
         }else{
             echo "<script> console.log(\"Error 108  \") <script>";
+        }
+    }
+    public function insert_student($imie,$nazwisko,$grupa,$pokoj,$pesel,$numer,$data_ur,$miasto,$int,$trud,$szkola,$adres,$choroby){
+        switch($grupa){
+            case "a1":{
+                $grupa = 3;
+                break;
+            }
+            case "b1":{
+                $grupa = 4;
+                break;
+            }
+            case "c1":{
+                $grupa = 5;
+                break;
+            }
+        }
+        echo $imie . "<br>";
+        echo $nazwisko . "<br>";
+        echo $grupa . "<br>";
+        echo $pokoj . "<br>";
+        echo $pesel . "<br>";
+        echo $data_ur . "<br>";
+        echo $miasto . "<br>";
+        echo $int . "<br>";
+        echo $trud . "<br>";
+        echo $szkola . "<br>";
+        echo $adres . "<br>";
+        echo $choroby . "<br>";
+        echo $numer . "<br>";
+        
+        
+        $sql="INSERT INTO `uczniowie`(`Imie`, `Nazwisko`, `PESEL`, `data_urodzenia`, `miejsce_urodzenia`, `szkola`, `adres`, `nr_telefonu`, `choroby`, `ID_grupy`,`nr_pokoju`) VALUES ('$imie','$nazwisko','$pesel','$data_ur','$miasto','$szkola','$adres','$numer','$choroby',$grupa,$pokoj)";
+        
+        if($this->conn->query($sql)=== TRUE){
+            echo "git_gud";
+        }else{
+        echo "shieeeeet";
         }
     }
 }
