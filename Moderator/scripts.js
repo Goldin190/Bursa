@@ -19,11 +19,19 @@ $(document).ready(function () {
     
     
 });
+
+function fill_student(id){
+    ajax_start();
+    ajax_load("#collapse_in_table");
+    console.log(id);
+    ajax_send("php/get_stud.php?id="+id);
+    assign();
+}
 function add_student(){
     $(".tab-pane").removeClass("active show");
     $("#edit-student").addClass("active show");
 }
-function fill_student(){
+function assign(){
     $("span #name").innerHTML = name;
     $("span #nd_name").innerHTML = nd_name;
     $("span #school").innerHTML = school;
@@ -32,9 +40,9 @@ function fill_student(){
     $("span #father_name").innerHTML = f_name;
     $("span #mother_nd_name").innerHTML = m_ndname;
     $("span #father_nd_name").innerHTML = f_ndname;
-    for(let lol of alergens){
+    /*for(let lol of alergens){
         $("ul .alergens").append(lol);    
-    }
+    }*/
     $("span #student_tel").innerHTML = s_tel;
     $("span #mother_tel").innerHTML = m_tel;
     $("span #father_tel").innerHTML = f_tel;
@@ -47,15 +55,16 @@ function next_sibling(){
         id = 0;
     }
     id = id+1;
-    $("#sib").append('<tr id="'+id+'"><td><label for="name_nd_name" class="sr-only">Mother_info</label><input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane rodzeństwa"></td><td><input type="text" class="form-control" id="imie'+id+'" name="imie'+id+'" placeholder="Imie"></td><td><input type="text" class="form-control" id="nazwisko'+id+'" placeholder="Nazwisko"></td><td><input type="number" class="form-control" id="wiek'+id+'" placeholder="Wiek"></td><td><input type="text" class="form-control" id="job'+id+'" placeholder="Praca/zajęcie"></td><td><select class="form-control" name="plec"><option>brat</option><option>siostra</option></select></td></tr>')
+    $("#sib").append('<tr id="'+id+'"><td><label for="name_nd_name" class="sr-only">Mother_info</label><input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane rodzeństwa"></td><td><input type="text" class="form-control"id="imie'+id+'" name="imie'+id+'" placeholder="Imie"></td><td><input type="text" class="form-control" name="nazwisko'+id+'" placeholder="Nazwisko"></td><td><input type="number" class="form-control" name="wiek'+id+'" placeholder="Wiek"></td><td><input type="text" class="form-control" name="job'+id+'" placeholder="Praca/zajęcie"></td><td><select class="form-control" name="plec'+id+'"><option value="brat">brat</option><option value="siostra">siostra</option></select></td></tr>')
 }
 function last_sibling(){
     $("tbody").children().last().remove();
 }
 
-function student_show(){
+function student_show(id){
     $(".tab-pane").removeClass("active show");
     $("#inf-student").addClass("active show");
+    fill_student(id);
 }
 
 function room_count_show(){
@@ -64,7 +73,6 @@ function room_count_show(){
     var room = $("#room");
     switch(option){
         case "a1":{
-            console.log("man sad reacts only");
             for(var i = 1;i<51;i++){
             room.append('<option>'+i+'</option>');    
             }
@@ -100,7 +108,6 @@ function ajax_start() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
 }
-//"select_user.php"
 
 function ajax_send(plik) {
     xmlhttp.open("GET", plik, true);

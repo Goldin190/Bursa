@@ -222,8 +222,7 @@
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <select class="from-control" id="room" name="room">
-                                                                    
+                                                                <select class="form-control" id="room" name="room"> 
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -310,10 +309,13 @@
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Matki">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="imie_matki" placeholder="Imie">
+                                                                <input type="text" class="form-control" id="imie_matki" 
+                                                                name="m_name"placeholder="Imie">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="nazwisko_matki" placeholder="Nazwisko">
+                                                                <input type="text" class="form-control" id="nazwisko_matki" 
+                                                                name="m_ndname"
+                                                                placeholder="Nazwisko">
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -322,28 +324,47 @@
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Ojca">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="imie_ojca" placeholder="Imie">
+                                                                <input type="text" class="form-control" id="imie_ojca" 
+                                                                name="f_name"placeholder="Imie">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="nazwisko_ojca" placeholder="Nazwisko">
+                                                                <input type="text" class="form-control" id="nazwisko_ojca" 
+                                                                name="f_ndname"placeholder="Nazwisko">
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td> <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Adres Zamieszkania rodziców"></td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="adres_matki" placeholder="Adres zamieszkania matki">
+                                                                <input type="text" class="form-control" id="adres_matki"
+                                                                name="m_adres" placeholder="Adres zamieszkania matki">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" id="adres_ojca" placeholder="Adres zamieszkania ojca">
+                                                                <input type="text" class="form-control" id="adres_ojca" 
+                                                                name="f_adres"
+                                                                placeholder="Adres zamieszkania ojca">
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td> <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Numer kontaktowy do rodziców"></td>
                                                             <td>
-                                                                <input type="number" class="form-control" id="nr_tel_matki" name="tel_matka" placeholder="numer telefonu matki">
+                                                                <input type="number" class="form-control" id="nr_tel_matki" name="m_tel" placeholder="numer telefonu matki">
                                                             </td>
                                                             <td>
-                                                                <input type="number" class="form-control" id="nr_tel_ojca" name="tel_ojca" placeholder="numer telefonu ojca">
+                                                                <input type="number" class="form-control" id="nr_tel_ojca" name="f_tel" placeholder="numer telefonu ojca">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" class="form-control-plaintext text-primary"
+                                                                value="Sytuacja materialna rodziców" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="m_syt" placeholder="Sytuacja Matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control"
+                                                                name="f_syt"
+                                                                placeholder="Sytuacja Ojca">
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -379,6 +400,7 @@
         </div>
     </div>
     <script src="scripts.js"></script>
+    <script id="ajax_scripts"></script>
 </body>
 
 </html>
