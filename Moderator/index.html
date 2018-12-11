@@ -203,6 +203,216 @@
                                                 <table class="table table-dark table-strip">
                                                     <tbody>
                                                         <tr>
+                                                            <td id="student">
+                                                               <input type="hidden" value="" name="id_stud">
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Imie Nazwisko">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="imie" placeholder="Imie" name="imie">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko" name="nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="grupa_pokoj" value="Grupa\Nr. pokoju">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control" id="grupa" name="grupa" onchange="room_count_show()">
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control" id="room" name="room"> 
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="PESEL\nr. telefonu">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="PESEL_student" placeholder="PESEL"
+                                                                name="PESEL_student">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="nr_tel_student"
+                                                                name="tel_stud" placeholder="nr. Telefonu">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Data urodzenia\miejsce urodzenia">
+                                                            </td>
+                                                            <td>
+                                                                <input type="date" class="form-control" id="data_ur"
+                                                                name="data_ur">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="miejsce_ur"
+                                                                name="miasto" placeholder="Miasto">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="zainteresowania\przedmioty sprawiające trudność"> 
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="interest" placeholder="np. piłka,koszykówka..."
+                                                                name="int">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="subject" placeholder="np. matematyka,polski..."
+                                                                name="trud">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="szkola" value="Szkoła\adres">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text"
+                                                                class="form-control" name="szkola" placeholder="Szkoła od której uczęszcza uczeń">
+                                                            </td>
+                                                            <td><input type="text" class="form-control" name="adress_ucz"
+                                                            placeholder="Adres ucznia">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" value="choroby">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control"
+                                                                name="choroby"
+                                                                placeholder="Uczulenia i choroby ucznia">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#parents">
+                                                Informacje o rodzicach
+                                            </a>
+                                        </div>
+
+                                        <div id="parents" class="colapse active show" data-parent="#parent">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-strip">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="name_nd_name" class="sr-only">Mother_info</label>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Matki">
+                                                            </td>
+                                                            <td>
+                                                               <input type="hidden" name="id_mom">
+                                                               <input type="text" class="form-control" id="imie_matki" name="m_name"placeholder="Imie">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="nazwisko_matki" 
+                                                                name="m_ndname"
+                                                                placeholder="Nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="name_nd_name" class="sr-only">Father_info</label>
+                                                                <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Ojca">
+                                                            </td>
+                                                            <td>
+                                                               <input type="hidden" name="id_dad">
+                                                                <input type="text" class="form-control" id="imie_ojca" 
+                                                                name="f_name"placeholder="Imie">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="nazwisko_ojca" 
+                                                                name="f_ndname"placeholder="Nazwisko">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Adres Zamieszkania rodziców"></td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="adres_matki"
+                                                                name="m_adres" placeholder="Adres zamieszkania matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" id="adres_ojca" 
+                                                                name="f_adres"
+                                                                placeholder="Adres zamieszkania ojca">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <input type="text" readonly class="form-control-plaintext text-primary" id="data_urodzenia" value="Numer kontaktowy do rodziców"></td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="nr_tel_matki" name="m_tel" placeholder="numer telefonu matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" class="form-control" id="nr_tel_ojca" name="f_tel" placeholder="numer telefonu ojca">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" class="form-control-plaintext text-primary"
+                                                                value="Sytuacja materialna rodziców" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="m_syt" placeholder="Sytuacja Matki">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control"
+                                                                name="f_syt"
+                                                                placeholder="Sytuacja Ojca">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#siblings">
+                                                Informacje o rodzeństwie
+                                            </a>
+                                        </div>
+
+                                        <div id="siblings" class="colapse active show" data-parent="#parent">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-strip">
+                                                    <tbody id="sib">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                                <input type="button" onclick="next_sibling()" class="btn btn-secondary" value="Dodaj Następne">
+                                                <input type="button" onclick="last_sibling()" class="btn btn-warning" value="Usuń Ostatnie">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="add-student" role="tabpanel">
+                        <form action="php/insert_student.php" method="post">
+                            <div id="parent">
+                                <div id="collapse_student">
+                                    <div class="card bg-dark">
+                                        <div class="card-header">
+                                            <a class="card-link text-info" data-toggle="collapse" href="#student">
+                                                Informacje o uczniu
+                                            </a>
+                                            <button type="submit" class="btn btn-success float-right">Submit</button>
+                                        </div>
+                                        <div id="student" class="colapse show" data-parent="#parent">
+                                            <div class="card-body">
+                                                <table class="table table-dark table-strip">
+                                                    <tbody>
+                                                        <tr>
                                                             <td>
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="name_nd_name" value="Imie Nazwisko">
                                                             </td>
@@ -319,7 +529,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>
+                                                            <td >
                                                                 <label for="name_nd_name" class="sr-only">Father_info</label>
                                                                 <input type="text" readonly class="form-control-plaintext text-primary" id="parents" value="Dane Ojca">
                                                             </td>
